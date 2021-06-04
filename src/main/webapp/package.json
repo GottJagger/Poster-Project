@@ -1,0 +1,16 @@
+{
+  "name": "webapp",
+  "version": "1.0.0",
+  "description": "proyecto post",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^5.0.1",
+    "sweetalert2": "^11.0.16"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
