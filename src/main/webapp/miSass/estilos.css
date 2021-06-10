@@ -27,6 +27,7 @@ body {
   --bs-primary: #98c1d9;
   --bs-danger: #ff9f1c;
   --bs-secondary: #06d6a0;
+  --bs-warning: #d00000;
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
@@ -3324,6 +3325,47 @@ fieldset:disabled .btn {
   border-color: #06d6a0;
 }
 
+.btn-warning {
+  color: #fff;
+  background-color: #d00000;
+  border-color: #d00000;
+}
+
+.btn-warning:hover {
+  color: #fff;
+  background-color: #b10000;
+  border-color: #a60000;
+}
+
+.btn-check:focus + .btn-warning, .btn-warning:focus {
+  color: #fff;
+  background-color: #b10000;
+  border-color: #a60000;
+  -webkit-box-shadow: 0 0 0 0.25rem rgba(215, 38, 38, 0.5);
+          box-shadow: 0 0 0 0.25rem rgba(215, 38, 38, 0.5);
+}
+
+.btn-check:checked + .btn-warning,
+.btn-check:active + .btn-warning, .btn-warning:active, .btn-warning.active,
+.show > .btn-warning.dropdown-toggle {
+  color: #fff;
+  background-color: #a60000;
+  border-color: #9c0000;
+}
+
+.btn-check:checked + .btn-warning:focus,
+.btn-check:active + .btn-warning:focus, .btn-warning:active:focus, .btn-warning.active:focus,
+.show > .btn-warning.dropdown-toggle:focus {
+  -webkit-box-shadow: 0 0 0 0.25rem rgba(215, 38, 38, 0.5);
+          box-shadow: 0 0 0 0.25rem rgba(215, 38, 38, 0.5);
+}
+
+.btn-warning:disabled, .btn-warning.disabled {
+  color: #fff;
+  background-color: #d00000;
+  border-color: #d00000;
+}
+
 .btn-outline-dark {
   color: #343a40;
   border-color: #343a40;
@@ -3457,6 +3499,40 @@ fieldset:disabled .btn {
 
 .btn-outline-secondary:disabled, .btn-outline-secondary.disabled {
   color: #06d6a0;
+  background-color: transparent;
+}
+
+.btn-outline-warning {
+  color: #d00000;
+  border-color: #d00000;
+}
+
+.btn-outline-warning:hover {
+  color: #fff;
+  background-color: #d00000;
+  border-color: #d00000;
+}
+
+.btn-check:focus + .btn-outline-warning, .btn-outline-warning:focus {
+  -webkit-box-shadow: 0 0 0 0.25rem rgba(208, 0, 0, 0.5);
+          box-shadow: 0 0 0 0.25rem rgba(208, 0, 0, 0.5);
+}
+
+.btn-check:checked + .btn-outline-warning,
+.btn-check:active + .btn-outline-warning, .btn-outline-warning:active, .btn-outline-warning.active, .btn-outline-warning.dropdown-toggle.show {
+  color: #fff;
+  background-color: #d00000;
+  border-color: #d00000;
+}
+
+.btn-check:checked + .btn-outline-warning:focus,
+.btn-check:active + .btn-outline-warning:focus, .btn-outline-warning:active:focus, .btn-outline-warning.active:focus, .btn-outline-warning.dropdown-toggle.show:focus {
+  -webkit-box-shadow: 0 0 0 0.25rem rgba(208, 0, 0, 0.5);
+          box-shadow: 0 0 0 0.25rem rgba(208, 0, 0, 0.5);
+}
+
+.btn-outline-warning:disabled, .btn-outline-warning.disabled {
+  color: #d00000;
   background-color: transparent;
 }
 
@@ -5072,6 +5148,16 @@ fieldset:disabled .btn {
   color: #024533;
 }
 
+.alert-warning {
+  color: #7d0000;
+  background-color: #f6cccc;
+  border-color: #f1b3b3;
+}
+
+.alert-warning .alert-link {
+  color: #640000;
+}
+
 @-webkit-keyframes progress-bar-stripes {
   0% {
     background-position-x: 1rem;
@@ -5467,6 +5553,22 @@ fieldset:disabled .btn {
   color: #fff;
   background-color: #025640;
   border-color: #025640;
+}
+
+.list-group-item-warning {
+  color: #7d0000;
+  background-color: #f6cccc;
+}
+
+.list-group-item-warning.list-group-item-action:hover, .list-group-item-warning.list-group-item-action:focus {
+  color: #7d0000;
+  background-color: #ddb8b8;
+}
+
+.list-group-item-warning.list-group-item-action.active {
+  color: #fff;
+  background-color: #7d0000;
+  border-color: #7d0000;
 }
 
 .btn-close {
@@ -6626,6 +6728,14 @@ fieldset:disabled .btn {
   color: #38deb3;
 }
 
+.link-warning {
+  color: #d00000;
+}
+
+.link-warning:hover, .link-warning:focus {
+  color: #a60000;
+}
+
 .ratio {
   position: relative;
   width: 100%;
@@ -7013,6 +7123,10 @@ fieldset:disabled .btn {
 
 .border-secondary {
   border-color: #06d6a0 !important;
+}
+
+.border-warning {
+  border-color: #d00000 !important;
 }
 
 .border-white {
@@ -7903,6 +8017,10 @@ fieldset:disabled .btn {
   color: #06d6a0 !important;
 }
 
+.text-warning {
+  color: #d00000 !important;
+}
+
 .text-white {
   color: #fff !important;
 }
@@ -7941,6 +8059,10 @@ fieldset:disabled .btn {
 
 .bg-secondary {
   background-color: #06d6a0 !important;
+}
+
+.bg-warning {
+  background-color: #d00000 !important;
 }
 
 .bg-body {
@@ -11004,5 +11126,99 @@ fieldset:disabled .btn {
   padding: 5%;
   margin-top: 20%;
   border-radius: 1rem;
+}
+
+.contenedor {
+  width: 90px;
+  height: 240px;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+
+.botonF1 {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  background: #f44336;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  margin-right: 16px;
+  margin-bottom: 16px;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 36px;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+span {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.botonF1:hover span {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+.botonF1:active {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  border: none;
+  color: #fff;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  font-size: 28px;
+  outline: none;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-right: 26px;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.botonF2 {
+  background: #2196f3;
+  margin-bottom: 85px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.botonF3 {
+  background: #673ab7;
+  margin-bottom: 130px;
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
+}
+
+.botonF4 {
+  background: #009688;
+  margin-bottom: 175px;
+  -webkit-transition: 0.9s;
+  transition: 0.9s;
+}
+
+.botonF5 {
+  background: #ff5722;
+  margin-bottom: 220px;
+  -webkit-transition: 0.99s;
+  transition: 0.99s;
+}
+
+.animacionVer {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 /*# sourceMappingURL=estilos.css.map */

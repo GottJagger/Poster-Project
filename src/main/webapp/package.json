@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "bootstrap": "^5.0.1",
+    "mdb-ui-kit": "^3.6.0",
     "sweetalert2": "^11.0.16"
   },
   "devDependencies": {},
