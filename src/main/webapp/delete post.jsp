@@ -1,3 +1,4 @@
+<%@page session="true"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,14 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="miSass/estilos.css">
 
-    <title>Create Post</title>
+    <title>Delete Post</title>
 </head>
 
 <body id="page-top">
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-uppercase " id="mainNav">
         <div class="container container-fluid collapse">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index.jsp">
                 <img src="img/ticket.png" alt="" width="30" height="30" class="d-inline-block align-text-top">
                 Poster's
             </a>
@@ -26,50 +27,49 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="ListarPost.html">My
+                            href="ListarPost.jsp">My
                             Poster's</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="Registro.html">Sign in</a></li>
+                            href="Registro.jsp">Sign in</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="Ingreso.html">Log in</a></li>
+                            href="Ingreso.jsp">Log in</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <br>
 
     <section class=" py-5 container-fluid container " id="testimonial">
         <div class="container-fluid shadow-sm">
             <div class="row">
-                <div class="col-md-4 py-5 bg-danger text-white text-center ">
+                <div class="col-md-4 py-5 bg-dark text-white text-center ">
                     <div class=" ">
                         <div class="card-body bg-info">
-                            <img src="img/create.png" style="width:30%">
-                            <h2 class="py-3">Ingresar</h2>
+                            <img src="img/archive.png" style="width:30%">
+                            <h2 class="py-3">Eliminar</h2>
                             <p>
-                                Aqui podras crear tu post que sera publicado en tu poster personal, con cuidado con
-                                alguna informacion personal.
+                                El Ingreso te ayudara a subir y ver post tuyos y de otras personas, para poder usar
+                                esta aplicacion es necesario Ingresar.
+                                solo queda este paso para poder ingresar en nuestro sistema.
                             </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-8 py-5 border">
-                    <h4 class="pb-4">LLena los campos para poder Realizar un Post</h4>
-                    <form action="" method="POST">
+                    <h4 class="pb-4">Por favor, llenar los campos requeridos</h4>
+                    <form action="miJSP/eliminarPost.jsp" method="POST">
 
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Titulo o tema</label>
-                            <input type="email" class="form-control" id="exampleInputName" required name="tema">
+                            <label for="exampleInputEmail1" class="form-label">Nombre de Usuario</label>
+                            <input type="email" class="form-control" id="exampleInputName" name="nombreUsuario">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Contenido</label>
-                            <textarea required type="text" class="form-control" id="exampleInputPassword1"
-                                name="contenido" aria-label="With textarea" maxlength="600"></textarea>
-                                <div id="emailHelp" class="form-text">El texto esta limitado, revisa lo que vayas a escribir</div>
+                            <label for="exampleInputPassword1" class="form-label">contraseña</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+                            <div id="emailHelp" class="form-text">No comparta tu contraseña con nadie.</div>
                         </div>
 
-                        <button type="submit" class="btn btn-danger text-white btn-lg text-uppercase">Crear
-                            Post</button>
+                        <button type="submit"
+                            class="btn btn-dark text-white btn-lg text-uppercase">Registrar</button>
                 </div>
             </div>
         </div>
@@ -80,12 +80,12 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="nav navbar-nav ms-auto">
                     <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded" href="create Post.html">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded" href="create Post.jsp">
                             Create Post
                         </a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded" href="delete post.html">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded" href="delete post.jsp">
                             Delete
                         </a>
                     </li>

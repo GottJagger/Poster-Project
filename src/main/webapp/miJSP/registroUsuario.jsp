@@ -4,6 +4,7 @@
     Author     : Gott Jagger
 --%>
 
+<%@page import="java.io.File"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Logica.Usuarios"%>
@@ -12,7 +13,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="refresh" content="3; url= http://localhost:8080/ProyectoPost/Registro.html">
+        <meta http-equiv="refresh" content="3; url= http://localhost:8080/ProyectoPost/Registro.jsp">
         <link rel="stylesheet" href="../miSass/estilos.css"/>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
@@ -20,16 +21,20 @@
     <body class="bg-dark">
 
         <%
+            
             Usuarios usuario = new Usuarios();
             usuario.setId(request.getParameter("identificacion"));
             usuario.setNombre(request.getParameter("nombre"));
             usuario.setNombreUsusario(request.getParameter("nombreUsuario"));
             usuario.setPass(request.getParameter("password"));
-
-            ArrayList listaUsuarios = (ArrayList) usuario.obtenerUsuarios();
+            
+            ArrayList listaUsuarios = usuario.obtenerUsuarios();
+            System.out.println(usuario.getId());
             Iterator iteradorUsuarios = listaUsuarios.iterator();
             while (iteradorUsuarios.hasNext()) {
                 Usuarios usuarioRegistro = (Usuarios) iteradorUsuarios.next();
+                System.out.println(usuarioRegistro.getNombreUsusario());
+                System.out.println(usuario.getId());
                 if (usuarioRegistro.getId().equals(usuario.getId()) || usuarioRegistro.getNombreUsusario().equals(usuario.getNombreUsusario())) {
                     out.print(" <script>function error() { swal({ title: 'Oops...',text: 'El usuario ya se encuentra registrado',icon: 'error',buttons: false}); } error();</script>");
                     break;

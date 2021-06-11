@@ -5,9 +5,19 @@
  */
 package Logica;
 
+import Persistencia.DBconection;
 import java.io.File;
 import java.io.Serializable;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import persistencia.Persistencia;
 
 /**
@@ -15,6 +25,11 @@ import persistencia.Persistencia;
  * @author Gott Jagger
  */
 public class Usuarios implements Serializable {
+
+    static final String URL = "jdbc:mysql://localhost:3306/posters";
+    private final String usuario = "root";
+    private final String password = "";
+    Connection con = null;
 
     private String id;
     private String nombre;
@@ -64,14 +79,58 @@ public class Usuarios implements Serializable {
     }
 
     public void agregarUsuario() {
-        Persistencia.conectarArchivo(new File("usuario.dat"), "grabar");
-        Persistencia.grabarObjeto(this);
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection(URL, usuario, password);
+            System.out.println("Conexión Exitosa");
+            System.out.println("llega");
+            PreparedStatement stmt = con.prepareStatement("INSERT INTO usuarios(id,nombre,nombreUsuario,password)VALUES(?, ?, ?, ?)");
+            System.out.println("ejecuta stmt");
+            stmt.setString(1, getId());
+            stmt.setString(2, getNombre());
+            stmt.setString(3, getNombreUsusario());
+            stmt.setString(4, getPass());
+            int count = stmt.executeUpdate();
+            System.out.println("inserted count: " + count);
+
+            stmt.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(Usuarios.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Usuarios.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }
 
-    public Collection obtenerUsuarios() {
-        Persistencia.conectarArchivo(new File("usuario.dat"), "leer");
-        return Persistencia.leerObjeto();
+    public ArrayList obtenerUsuarios() {
+
+        ArrayList<Usuarios> listaObjetos = new ArrayList();
+        try {
+
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection(URL, usuario, password);
+            //System.out.println("Conexión Exitosa");
+            PreparedStatement stmt = con.prepareStatement("SELECT * FROM usuarios");
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                Usuarios usr = new Usuarios();
+                usr.setId(rs.getString("id"));
+                usr.setNombre(rs.getString("nombre"));
+                usr.setNombreUsusario(rs.getString("nombreUsuario"));
+                usr.setPass(rs.getString("password"));
+                listaObjetos.add(usr);
+
+            }
+            rs.close();
+            con.close();
+            return listaObjetos;
+        } catch (SQLException ex) {
+            Logger.getLogger(Usuarios.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Usuarios.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return listaObjetos;
     }
-    
+
 }
