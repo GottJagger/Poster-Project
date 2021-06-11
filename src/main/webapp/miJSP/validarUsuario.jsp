@@ -1,28 +1,31 @@
 <%-- 
     Document   : validarUsuario
-    Created on : 3/06/2021, 10:45:01 p. m.
+    Created on : 11/06/2021, 12:08:58 a. m.
     Author     : Gott Jagger
 --%>
 
-<%@page import="java.util.Iterator"%>
+
+
+<%@page import="java.util.*"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="Modelo.Usuarios"%>
+
+<%@page import="Logica.*"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page session="true"%>
 
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="3; url= http://localhost:8080/ProyectoPost/Index.html">
+        <meta http-equiv="refresh" content="4; url= http://localhost:8080/ProyectoPost/">
         <link rel="stylesheet" href="../miSass/estilos.css"/>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-        <title>JSP Page</title>
+        <title>JSP validar</title>
     </head>
-    <body>
+    <body class="bg-dark">
         <%
-            HttpSession sesion = request.getSession();
-     
-            if (sesion.isNew()) {
+            if (session.isNew()) {
+                System.out.println("la session es nueva");
+                
                 Usuarios usuario = new Usuarios();
                 String nombreUsuario = request.getParameter("nombreUsuario");
                 String Password = request.getParameter("password");
@@ -30,10 +33,12 @@
                 ArrayList listaUsuarios = (ArrayList) usuario.obtenerUsuarios();
                 Iterator iteradorUsuarios = listaUsuarios.iterator();
                 while (iteradorUsuarios.hasNext()) {
-                    Usuarios usr = (Usuarios) iteradorUsuarios.next();
+                System.out.println("Entro al  while");
+                    Usuarios usrs = (Usuarios) iteradorUsuarios.next();
 
-                    if (usr.getNombreUsusario().equals(nombreUsuario) || usr.getPass().equals(Password)) {
-                        out.print("<script> function success() {swal({ title: 'Bienvenido', text: '" + usr.getNombre() + "' a tu poster personal ,icon: 'success', buttons: false});}success(); </script>");
+                    if (usrs.getNombreUsusario().equals(nombreUsuario) || usrs.getPass().equals(Password)) {
+                    System.out.println("Entro al  if");
+                        out.print("<script> function success() {swal({ title: 'Bienvenido', text: '" + usrs.getNombre() + "' a tu poster personal ,icon: 'success', buttons: false});}success(); </script>");
                         session.setAttribute("nombreUsuario", nombreUsuario);
                         break;
                     } else {
@@ -41,9 +46,10 @@
                         break;
                     }
                 }
-                
+                session.invalidate();
             } else {
-                out.print(" <script>function error() { swal({ title: 'Oops...',text: 'ya se encuentra conectado',icon: 'warning',buttons: false}); } error();</script>");
+            session.invalidate();
+                out.print(" <script>function error() { swal({ title: 'Oops...',text: 'Ya se enecuentra conectado',icon: 'error',buttons: false}); } error();</script>");
             }
 
         %>

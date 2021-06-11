@@ -17,20 +17,28 @@
                 <img src="img/ticket.png" alt="" width="30" height="30" class="d-inline-block align-text-top">
                 Poster's
             </a>
-            <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" 
-                type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="ListarPost.html">listar
-                            Poster's</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="Registro.html">Sign in</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="Ingreso.html">Log in</a></li>
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded" href="ListarPost.html">
+                            My Poster's
+                        </a>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded " href="Registro.html">
+                            Sign in
+                        </a>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1 ">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded active" href="Ingreso.html">
+                            Log in
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -54,20 +62,21 @@
                 </div>
                 <div class="col-md-8 py-5 border">
                     <h4 class="pb-4">Por favor, llenar los campos requeridos</h4>
-                    <form action="" method="POST">
-                        
+                    <form action="miJSP/validarUsuario.jsp" method="POST">
+
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Nombre de Usuario</label>
-                            <input type="email" class="form-control" id="exampleInputName" name="nombreUsuario">
+                            <input type="text" class="form-control" id="exampleInputName" name="nombreUsuario" required>
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">contraseña</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+                            <input type="password" class="form-control" id="exampleInputPassword1" name="password" required>
                             <div id="emailHelp" class="form-text">No comparta tu contraseña con nadie.</div>
                         </div>
 
                         <button type="submit"
-                            class="btn btn-secondary text-white btn-lg text-uppercase">Registrar</button>
+                            class=" btn-secondary text-white btn-lg text-uppercase">Ingresar</button>
+                    </form>
                 </div>
             </div>
         </div>

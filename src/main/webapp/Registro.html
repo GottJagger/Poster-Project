@@ -24,13 +24,21 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="ListarPost.html">My
-                            Poster's</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="Registro.html">Sign in</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="Ingreso.html">Log in</a></li>
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded active" href="ListarPost.html">
+                            My Poster's
+                        </a>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded " href="Registro.html">
+                            Sign in
+                        </a>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded" href="Ingreso.html">
+                            Log in
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -40,7 +48,7 @@
         <div class="container-fluid shadow-sm">
             <div class="row">
                 <div class="col-md-4 py-5 bg-primary text-white text-center ">
-                    <div class=" ">
+                    <div class="">
                         <div class="card-body bg-info">
                             <img src="http://www.ansonika.com/mavia/img/registration_bg.svg" style="width:30%">
                             <h2 class="py-3">Registrar</h2>
@@ -58,25 +66,24 @@
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Nombre</label>
                             <input type="text" class="form-control" id="exampleInputNombre" aria-describedby="emailHelp"
-                                name="nombre">
+                                   name="nombre" required>
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Identificacion</label>
                             <input type="number" class="form-control" id="exampleInputid" aria-describedby="emailHelp"
-                                name="identificacion">
+                                name="identificacion" required>
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Nombre de Usuario</label>
                             <input type="text" class="form-control" id="exampleInputnombreUsuario"
-                                aria-describedby="emailHelp" name="nombreUsuario">
+                                aria-describedby="emailHelp" name="nombreUsuario" required>
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">contraseña</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+                            <input type="password" class="form-control" id="exampleInputPassword1" required name="password">
                             <div id="emailHelp" class="form-text ">No comparta tu contraseña con nadie.</div>
                         </div>
-                        <button type="submit" onclick=""
-                            class="btn btn-primary text-white btn-lg text-uppercase">Registrar</button>
+                        <button type="submit" class=" btn-primary text-white btn-lg text-uppercase ">Registrar</button>
                     </form>
                 </div>
             </div>
